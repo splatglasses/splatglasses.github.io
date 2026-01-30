@@ -1,0 +1,88 @@
+body {
+  background-color: #add8e6;
+  margin: 17px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+h1 {
+  font-size: 3.5em;
+  font-weight: bold;
+  text-align: center;
+  margin: 0 0 30px 0;
+  color: rgb(0, 0, 0);
+  letter-spacing: -1px;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 25px;
+  font-family: Arial, sans-serif;
+}
+
+h3
+{
+  font-family: 'Times New Roman', Times, serif;
+  color: #000000;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#paragraph2 {
+  display: block;
+  width: 880px;
+  margin: 25px 0 ;
+  padding: 18px;
+  border: 3px solid #008000;
+  line-height: 2;
+  box-sizing: border-box;
+  background-color: #ffffff;
+}
+
+p.blue {
+  color: #ffffff;
+  background-color: navy;
+  padding: 12px;
+  border: 3px solid #000000;
+}
+
+section ol {
+  list-style-type: decimal;
+  padding-left: 2.5em;
+  margin: 1em 0;
+}
+
+section ol li a {
+  color: #663399;
+  text-decoration: none;
+}
+
+section ol li a:hover {
+  text-decoration: underline;
+}
+
+p a[href*="w3schools"] {
+  color: #434917;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 15px;
+}
+
+th {
+  background-color: #cacaca;
+  border: 1px solid black;
+  padding: 5px 12px;
+  font-weight: bold;
+}
+
+td {
+  background-color: white;
+  border: 1px solid black;
+  padding: 10px 12px;
+}
