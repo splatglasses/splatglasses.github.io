@@ -112,11 +112,14 @@ header {
 }
 
 h1 {
-    color: #fdf6e3;
     padding: 20px 0;
     margin: 0;
     font-size: 2em;
     font-weight: bold;
+    padding: 15px 20px;
+    border-bottom: 1px solid #586e75;
+    z-index: 999;
+    text-align: center;
 }
 
 #container {
