@@ -11,43 +11,92 @@ body {
     line-height: 1.4;
 }
 
-#jumpMenu {
+nav#menuItems {
     position: fixed;
     left: 0;
     top: 0;
     bottom: 0;
     width: 15%;
     padding: 20px;
-    overflow-y: auto;
     background: #073642;
     border-right: 1px solid #586e75;
 }
 
-#jumpMenu h2 {
-    margin-bottom: 15px;
-    color: #93a1a1;
-}
-
-#jumpMenu a {
+nav#menuItems button {
     display: block;
-    padding: 8px 0;
-    text-decoration: none;
-    color: #839496;
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    background: #002b36;
+    color: #93a1a1;
+    border: none;
+    font-family: inherit;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+    text-align: left;
 }
 
-#jumpMenu a:hover {
-    color: #268bd2;
+nav#menuItems button:hover {
+    background: #268bd2;
+    color: #fdf6e3;
+    border-left-color: #fdf6e3;
+}
+
+nav#menuItems button#recentArticles {
     background: #002b36;
+    position: relative;
+}
+
+nav#menuItems button#recentArticles:hover {
+    background: #b58900;
+    color: #fdf6e3;
+}
+
+nav#menuItems button#recentArticles:hover + ul#jumpMenu,
+
+ul#jumpMenu:hover {
+    display: block;
+}
+
+ul#jumpMenu {
+    display: none;
+    position: relative;
+    left: 0;
+    top: 0;
+    background: #073642;
+    width: 100%;
+    padding: 10px 0 0 15px;
+    margin: 0;
+    list-style: disc inside;
+}
+
+ul#jumpMenu li {
+    margin: 8px 0;
+    color: #002b36;
+}
+
+ul#jumpMenu a {
+    color: #002b36;
+    padding: 6px 10px;
+    display: block;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: all 0.2s ease;
+}
+
+ul#jumpMenu a:hover {
+    background: #b58900;
+    color: #fdf6e3;
 }
 
 main {
     margin-left: 15%;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    padding-top: 60px;
     padding: 60px 20px 100px;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
@@ -56,24 +105,26 @@ header {
     left: 15%;
     right: 0;
     padding: 15px 20px;
-    z-index: 999;
-    text-align: center;
     background: #073642;
     border-bottom: 1px solid #586e75;
+    z-index: 999;
+    text-align: center;
 }
 
 h1 {
-    padding: 20px;
-    text-align: center;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #586e75;
+    color: #fdf6e3;
+    padding: 20px 0;
+    margin: 0;
+    font-size: 2em;
+    font-weight: bold;
 }
 
 #container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: center;
+    justify-content: flex-start;
+    margin-top: 40px;
 }
 
 article {
@@ -81,32 +132,42 @@ article {
     flex: 0 0 300px;
     padding: 15px;
     border: 1px solid #586e75;
-    margin-bottom: 20px;
     background: #073642;
     color: #657b83;
     max-height: 260px;
     overflow: hidden;
-    transition: color 2s ease, max-height 2s ease, background 2s ease;
+    transition: all 2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    flex-shrink: 0;
+    margin-bottom: 20px;
 }
 
 article:hover {
     color: #93a1a1;
     max-height: 900px;
+    width: 450px;
+    flex: 0 0 450px;
+    padding: 25px;
+    z-index: 10;
     background: #002b36;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
-article h3 {
-    margin-bottom: 10px;
+article h2 {
+    margin: 0 0 15px 0;
     color: #93a1a1;
+    font-size: 1.4em;
 }
 
 article p {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 article p:first-of-type::first-letter {
     font-family: "Times New Roman", Times, serif;
     font-size: 36px;
+    float: left;
+    line-height: 1;
+    margin-right: 8px;
 }
 
 article a {
@@ -117,13 +178,13 @@ article a {
 
 article a[href*="google"]::after {
     content: "";
-    background-image: url("arrow.png");
+    background-image: url("arrow.svg");
     background-size: contain;
     background-repeat: no-repeat;
     display: inline-block;
-    width: 16px;
-    height: 16px;
-    margin-left: 4px;
+    width: 18px;
+    height: 18px;
+    margin-left: 6px;
     vertical-align: middle;
 }
 
@@ -135,81 +196,95 @@ article a:hover {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    padding: 10px;
-    z-index: 1001;
+    padding: 12px 16px;
     border: 1px solid #586e75;
     background: #073642;
+    z-index: 1001;
+}
+
+#thanks a:link {
+    color: #84cdd5;
 }
 
 #thanks a:visited {
     color: #58949b;
-
 }
 
 footer {
+    margin-top: auto;
     padding: 20px;
     border-top: 1px solid #586e75;
-    margin-top: auto;
-}
-
-#jumpMenu ul {
-    list-style: none;
-}
-
-#jumpMenu li {
-    position: relative;
-}
-
-#jumpMenu li ul {
-    display: none;
-    margin-top: 5px;
-    padding-left: 10px;
-    background: #073642;
-}
-
-#jumpMenu li:hover ul {
-    display: block;
-}
-
-#jumpMenu li ul a {
-    padding: 6px 8px;
-    color: #839496;
-    background: #073642;
-}
-
-#jumpMenu li ul a:hover {
-    color: #fdf6e3;
-    background: #586e75;
+    color: #657b83;
 }
 
 @media (max-width: 768px) {
-    #jumpMenu {
+    nav#menuItems {
         width: 100%;
         height: auto;
         position: relative;
     }
-
+    
     main {
         margin-left: 0;
-        padding-top: 20px;
         padding: 20px;
     }
-
+    
     header {
         position: relative;
         left: 0;
         right: 0;
     }
-
+    
     article {
         width: 100%;
-        max-width: 300px;
+        max-width: 350px;
     }
-
+    
     #thanks {
         position: relative;
         bottom: auto;
         right: auto;
         margin: 20px auto;
     }
+    
+    ul#jumpMenu {
+        position: static;
+        display: block;
+        box-shadow: none;
+        margin-top: 10px;
+    }
 }
+
+
+nav#menuItems:hover ul#jumpMenu {
+    display: block !important;
+    max-height: 900px !important;
+    padding: 10px 15px !important;
+    background: #002b36 !important;
+    list-style: none !important;
+    margin-bottom: 8px !important;
+}
+
+ul#jumpMenu {
+    display: none !important;
+    position: relative !important;
+    margin-top: 5px !important;
+    max-height: 0 !important;
+    overflow: hidden !important;
+    transition: all 0.3s ease !important;
+}
+
+ul#jumpMenu li {
+    padding: 6px 0 !important;
+    color: #93a1a1 !important;
+}
+
+ul#jumpMenu li a {
+    color: #93a1a1 !important;
+    text-decoration: none !important;
+}
+
+ul#jumpMenu li a:hover {
+    color: #fdf6e3 !important;
+}
+
