@@ -1,0 +1,102 @@
+body {
+  background-color: #002b36;
+  color: #839496;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  line-height: 1.5;
+  padding: 20px;
+  margin: 0;
+}
+
+h1, h2 {
+  color: #fdf6e3;
+}
+
+h1 {
+  border-bottom: 2px solid #073642;
+  padding-bottom: 10px;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #586e75, transparent);
+  margin: 30px 0;
+}
+
+p {
+  max-width: 800px;
+}
+
+#counter {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #b58900;
+  background: #073642;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #586e75;
+  color: #fdf6e3;
+  border: 1px solid #666;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: inherit;
+  margin: 5px;
+  transition: all 0.2s;
+}
+
+button:hover {
+  background-color: #657b83;
+  border-color: #93a1a1;
+}
+
+button:active {
+  background-color: #073642;
+}
+
+label {
+  color: #93a1a1;
+  font-weight: bold;
+}
+
+input[type="text"] {
+  background-color: #073642;
+  color: #93a1a1;
+  border: 1px solid #586e75;
+  padding: 5px;
+  border-radius: 3px;
+  font-family: inherit;
+}
+
+input[type="text"]:focus {
+  border-color: #b58900;
+  outline: none;
+}
+
+#styleParagraph {
+  background-color: #073642;
+  padding: 15px;
+  border-left: 4px solid #586e75;
+  margin: 10px 0;
+}
+
+footer {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #073642;
+  color: #586e75;
+  font-size: 0.9em;
+}
+
+#forLoopResult, #oddNumberResult {
+  background-color: #073642;
+  color: #2aa198;
+  padding: 10px;
+  border-radius: 4px;
+  font-family: 'Consolas', monospace;
+  display: block;
+  margin: 10px 0;
+}
