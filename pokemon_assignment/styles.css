@@ -1,0 +1,42 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #cbeeff;
+}
+
+.app {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 18px;
+  border: 6px solid #e0b400;
+  background: #fff;
+  text-align: center;
+}
+
+.card img {
+  image-rendering: pixelated;
+}
+
+.moves {
+  margin: 15px 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+#team {
+  margin-top: 15px;
+}
+
+.team-member {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 10px;
+  align-items: center;
+  border-top: 1px solid #ccc;
+  padding: 10px 0;
+}
+
+.hidden {
+  display: none;
+}

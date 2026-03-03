@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pokémon Team Builder</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <h1>Pokemon Team Builder</h1>
+
+    <form id="search-form">
+      <label for="poke-input">Name or ID</label>
+      <input id="poke-input" type="text" required />
+      <button type="submit">Find</button>
+    </form>
+
+    <div id="pokemon-view" class="card hidden">
+      <img id="pokemon-sprite" alt="pokemon sprite" />
+      <audio id="pokemon-cry" controls></audio>
+
+      <div class="moves">
+        <select class="move-select"></select>
+        <select class="move-select"></select>
+        <select class="move-select"></select>
+        <select class="move-select"></select>
+      </div>
+
+      <button id="add-to-team">Add to Team</button>
+    </div>
+
+    <h2>Your Team</h2>
+    <div id="team"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
