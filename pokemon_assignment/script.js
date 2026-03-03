@@ -10,6 +10,8 @@ const addBtn = document.getElementById("add-to-team");
 const teamDiv = document.getElementById("team");
 
 let currentPokemon = null;
+let teamSize = 0; // keep track of how many Pokemon are on the team
+
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
   const query = input.value.trim().toLowerCase();
@@ -40,7 +42,6 @@ async function getPokemon(idOrName) {
 }
 
 function renderPokemon(pokemon) {
-
   const spriteUrl =
     pokemon.sprites.other?.["official-artwork"]?.front_default ||
     pokemon.sprites.front_default;
@@ -77,6 +78,11 @@ function renderPokemon(pokemon) {
 
 addBtn.addEventListener("click", () => {
   if (!currentPokemon) return;
+
+  if (teamSize >= 6) {
+    alert("Your team is full. You can only have up to 6 Pokémon.");
+    return;
+  }
 
   const chosenMoves = Array.from(moveSelects).map((s) => s.value.trim());
 
@@ -116,6 +122,7 @@ function addTeamMember(pokemon, moves) {
   removeBtn.textContent = "Remove";
   removeBtn.addEventListener("click", () => {
     member.remove();
+    teamSize = Math.max(0, teamSize - 1);
   });
 
   const rightSide = document.createElement("div");
@@ -125,4 +132,6 @@ function addTeamMember(pokemon, moves) {
   member.appendChild(img);
   member.appendChild(rightSide);
   teamDiv.appendChild(member);
+
+  teamSize += 1;
 }
